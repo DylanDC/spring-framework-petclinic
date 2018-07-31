@@ -8,6 +8,7 @@ import java.util.Set;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
@@ -30,9 +31,9 @@ public class ValidatorTests {
 
         LocaleContextHolder.setLocale(Locale.ENGLISH);
         Person person = new Person();
-        person.setFirstName("a");
+        person.setFirstName("salut");
         person.setLastName("smith");
-
+        
         Validator validator = createValidator();
         Set<ConstraintViolation<Person>> constraintViolations = validator.validate(person);
 
